@@ -24,7 +24,7 @@ test:
 deployment:
   aws:
     branch: publish
-        commands:
-          - sbt assembly
-          - sudo mkdir /deploy
-          - sudo cp target/scala-2.11/spark-table-transfer-assembly-???-SNAPSHOT.jar /deploy/spark-table-transfer.jar
+    commands:
+      - sbt assembly
+      - sudo mkdir /deploy
+      - sudo cp target/scala-2.11/spark-table-transfer-assembly-???-SNAPSHOT.jar /deploy/spark-table-transfer.jar
