@@ -1,4 +1,4 @@
-name := "spark-study"
+name := "spark-table-transfer"
 
 version := "1.0"
 
