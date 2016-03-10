@@ -7,6 +7,8 @@ import java.util.Properties
 import org.apache.spark.sql.{SQLContext, SaveMode}
 import org.apache.spark.{SparkConf, SparkContext}
 
+import scala.reflect.internal.Trees.Try
+
 object Main extends App{
   //copies a table from A to B
   // original table
@@ -27,7 +29,9 @@ object Main extends App{
 
 
   // spark!
-  val conf = new SparkConf().setAppName("spark-table-transfer").setMaster("local")
+  val master = scala.util.Try(sys.env("HOST")).getOrElse("local")
+  println(s"Host is $master")
+  val conf = new SparkConf().setAppName("spark-table-transfer").setMaster(master)
   val sc = new SparkContext(conf)
   val sqlContext = new SQLContext(sc)
 
