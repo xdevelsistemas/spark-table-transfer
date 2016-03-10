@@ -27,7 +27,7 @@ object Main extends App{
 
 
   // spark!
-  val conf = new SparkConf().setAppName("Spark Table Transfer").setMaster("local")
+  val conf = new SparkConf().setAppName(s"spark-table-transfer-from-$ORIGINAL_HOST/$ORIGINAL_DATABASE/$ORIGINAL_TABLE-to-$DESTINATION_HOST/$DESTINATION_DATABASE/$DESTINATION_TABLE").setMaster("local")
   val sc = new SparkContext(conf)
   val sqlContext = new SQLContext(sc)
 
@@ -37,7 +37,7 @@ object Main extends App{
     ORIGINAL_TABLE,
     new Properties()
   )
-  original_table.registerTempTable("table_name")
+  original_table.registerTempTable("original_table")
 
   // pegar todos os registros
   val results = sqlContext.sql("SELECT * FROM original_table")
