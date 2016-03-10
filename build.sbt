@@ -7,8 +7,8 @@ scalaVersion := "2.11.7"
 classpathTypes ~= (_ + "orbit")
 
 
-libraryDependencies += "org.apache.spark" % "spark-core_2.11" % "1.6.0"
+libraryDependencies += "org.apache.spark" % "spark-core_2.11" % "1.6.0" % "provided"
 
-libraryDependencies += "org.apache.spark" % "spark-sql_2.11" % "1.6.0"
+libraryDependencies += "org.apache.spark" % "spark-sql_2.11" % "1.6.0" % "provided"
 
-libraryDependencies += "postgresql" % "postgresql" % "9.1-901-1.jdbc4"
+libraryDependencies += "postgresql" % "postgresql" % "9.1-901-1.jdbc4" % "provided"
