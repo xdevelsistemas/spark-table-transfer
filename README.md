@@ -1,7 +1,7 @@
 # Spark Table Transfer
-Aplicação feita em cima do Spark para transferência de tabelas de bancos de dados.
-
 [![Circle CI](https://circleci.com/gh/xdevelsistemas/spark-table-transfer/tree/publish.svg?style=svg)](https://circleci.com/gh/xdevelsistemas/spark-table-transfer/tree/publish)
+
+Aplicação feita em cima do Spark para transferência de tabelas de bancos de dados.
 
 # Obs:
 No momento suporta apenas bancos de dados Postgres
