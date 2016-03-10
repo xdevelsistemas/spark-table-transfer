@@ -29,7 +29,8 @@ object Main extends App{
 
 
   // spark!
-  val master = scala.util.Try(sys.env("HOST")).getOrElse("local")
+  import scala.util.Try
+  val master = Try{sys.env("HOST")}.getOrElse("local")
   println(s"Host is $master")
   val conf = new SparkConf().setAppName("spark-table-transfer").setMaster(master)
   val sc = new SparkContext(conf)
