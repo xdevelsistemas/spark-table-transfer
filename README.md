@@ -16,4 +16,4 @@ java -jar tabletransfer originalHost originalDatabase originalUser originalPassw
 
 # Var Envs
 HOST=
-SPARK-EXECUTOR-URI=
+SPARK_EXECUTOR_URI=

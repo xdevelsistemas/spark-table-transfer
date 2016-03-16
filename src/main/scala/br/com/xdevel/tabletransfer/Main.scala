@@ -36,7 +36,7 @@ object Main extends App{
     .setMaster(master)
 
   val conf = Try{
-    auxConf.set("spark.executor.uri", sys.env("SPARK-EXECUTOR-URI"))
+    auxConf.set("spark.executor.uri", sys.env("SPARK_EXECUTOR_URI"))
   }.getOrElse(auxConf)
 
 
