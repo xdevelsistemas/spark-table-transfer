@@ -12,3 +12,8 @@ Rodar com os seguintes argumentos:
 ```bash
 java -jar tabletransfer originalHost originalDatabase originalUser originalPassword originalTable destinationHost destinationTable destinationUser destinationPasswordl destinationTable
 ```
+
+
+# Var Envs
+HOST=
+SPARK-EXECUTOR-URI=
