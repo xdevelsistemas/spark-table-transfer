@@ -30,7 +30,17 @@ object Main extends App{
   // spark!
   val master = Try{sys.env("HOST")}.getOrElse("local")
   println(s"Host is $master")
-  val conf = new SparkConf().setAppName("spark-table-transfer").setMaster(master)
+
+  val auxConf = new SparkConf()
+    .setAppName("spark-table-transfer")
+    .setMaster(master)
+
+  val conf = Try{
+    auxConf.set("spark.executor.uri", sys.env("SPARK-EXECUTOR-URI"))
+  }.getOrElse(auxConf)
+
+
+
   val sc = new SparkContext(conf)
   val sqlContext = new SQLContext(sc)
 
